@@ -24,6 +24,18 @@ class Program
         }
         string withReversedChars = string.Join(" ", words);
 
+        // преобразование строки, первая буква слов в верхнем регистре, последняя - в нижнем
+        string[] words2 = withReversedChars.Split(' ');
+        for (int i = 0; i < words2.Length; i++)
+        {
+            string word = words2[i];
+            char firstChar = char.ToUpper(word[0]);
+            string middle = word.Substring(1, word.Length - 2).ToLower();
+            char lastChar = char.ToLower(word[word.Length - 1]);
+            words2[i] = firstChar + middle + lastChar;
+        }
+        string withCapitalizedWords = string.Join(" ", words2);
+
     }
 
 

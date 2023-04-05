@@ -57,9 +57,7 @@ class Program
 
         Console.WriteLine("Результат:");
         Console.WriteLine(finalText);
-
+        Console.ReadKey();
     }
-
-
 
 }

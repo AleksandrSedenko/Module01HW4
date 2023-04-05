@@ -36,6 +36,28 @@ class Program
         }
         string withCapitalizedWords = string.Join(" ", words2);
 
+        // замена слов на "S" или "O" в зависимости от первой и последней буквы
+        string[] words3 = withCapitalizedWords.Split(' ');
+        for (int i = 0; i < words3.Length; i++)
+        {
+            string word = words3[i];
+            char firstChar = word[0];
+            char lastChar = word[word.Length - 1];
+            if (Char.ToLower(firstChar) == 'p')
+            {
+                firstChar = 'S';
+            }
+            if (Char.ToLower(lastChar) == 'n')
+            {
+                lastChar = 'O';
+            }
+            words3[i] = firstChar + word.Substring(1, word.Length - 2) + lastChar;
+        }
+        string finalText = string.Join(" ", words3);
+
+        Console.WriteLine("Результат:");
+        Console.WriteLine(finalText);
+
     }
 
 
